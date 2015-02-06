@@ -60,7 +60,6 @@ module LazyHighCharts
         window.setTimeout(function(){
           #{core_js}
         }, 100);
-        });
         </script>
         EOJS
       end
