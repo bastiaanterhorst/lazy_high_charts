@@ -59,7 +59,7 @@ module LazyHighCharts
         <script type="text/javascript">
         $(function() {
           #{core_js}
-        })()
+        });
         </script>
         EOJS
       end
