@@ -37,9 +37,9 @@ module LazyHighCharts
       if defined?(request) && request.respond_to?(:xhr?) && request.xhr?
         graph =<<-EOJS
         <script type="text/javascript">
-        (function() {
+        window.setTimeout(function(){
           #{core_js}
-        })()
+        }, 100);
         </script>
         EOJS
       elsif defined?(Turbolinks) && request.headers["X-XHR-Referer"]
@@ -57,8 +57,9 @@ module LazyHighCharts
       else
         graph =<<-EOJS
         <script type="text/javascript">
-        $(function() {
+        window.setTimeout(function(){
           #{core_js}
+        }, 100);
         });
         </script>
         EOJS
